@@ -13,7 +13,7 @@ enum Router: URLRequestConvertible {
     static let apiKey = "336c418"
     
     case search(query: String?)
-    case movieDetail(movieID: Int?)
+    case movieDetail(movieID: String?)
     
     var baseURL : URL {
         return URL(string: "https://www.omdbapi.com")!
@@ -35,7 +35,7 @@ enum Router: URLRequestConvertible {
             }
         case .movieDetail(movieID: let movieID):
             if let movieID = movieID {
-                params["movieID"] = movieID
+                params["i"] = movieID
             }
         }
         return params
@@ -45,20 +45,8 @@ enum Router: URLRequestConvertible {
         return JSONEncoding.default
     }
     
-    var path: String {
-        switch self {
-        case .search:
-            return ""
-        case .movieDetail(movieID: let movieID):
-            if let movieID = movieID {
-                return "movie/\(movieID)"
-            }
-        }
-        return ""
-    }
-    
     func asURLRequest() throws -> URLRequest {
-        var urlRequest = URLRequest(url: baseURL.appendingPathComponent(path))
+        var urlRequest = URLRequest(url: baseURL)
         
         urlRequest.httpMethod = method.rawValue
         
