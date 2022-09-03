@@ -82,3 +82,47 @@ public extension UIApplication {
         
     }
 }
+
+//MARK: - UIViewController
+extension UIViewController {
+    
+    /// Adds shadows bottom of navigation bar.
+    func applyShadowInNavigation() {
+        self.navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: self.navigationController?.navigationBar.bounds ?? .zero).cgPath
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.50)
+            .cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.5
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        self.navigationController?.navigationBar.layer.shadowRadius = 3
+    }
+
+    /// Method apply color on the status and navBar. **The Status Bar text color sets white according to the choose.** In addition, the tint color will sets white.
+    func applyColorStatusBar(color: UIColor, whiteTextColor: Bool) {
+     
+        if #available(iOS 13.0, *) {
+            let style: UIUserInterfaceStyle = whiteTextColor ? .dark : .light
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = color
+            navigationController?.navigationBar.tintColor = .white
+            navigationController?.navigationBar.overrideUserInterfaceStyle = style
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.compactAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+            navigationController?.navigationBar.titleTextAttributes = [.font : UIFont.systemFont(ofSize: 16, weight: .semibold)]
+        } else {
+            guard let navBar = navigationController?.navigationBar else { return }
+            navBar.barStyle = whiteTextColor ? .black : .default
+            navBar.barTintColor = color
+        }
+    }
+    
+    /// Adds title for back button of navigation.
+    func addTitleForBackButton(title: String) {
+        let backButton = UIBarButtonItem()
+        backButton.title = title
+        backButton.tintColor = .black
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+
+}
