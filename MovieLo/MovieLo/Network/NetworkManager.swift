@@ -34,12 +34,21 @@ final class NetworkManager {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode(type.self, from: data)
                     completionHandler(.success(result))
+                    self.printResponse(response: response)
                 } catch {
                     completionHandler(.failure(error))
                 }
             case .failure(let error):
                 completionHandler(.failure(error))
             }
+        }
+    }
+    
+    /// Prints the reponse data for log screen.
+    private func printResponse(response: AFDataResponse<Data>) {
+        if let data = response.data,
+           let json = String(data: data, encoding: String.Encoding.utf8) {
+            print("\n🌵 Success Response: \(json) \n")
         }
     }
 }
