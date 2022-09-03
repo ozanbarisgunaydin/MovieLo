@@ -26,6 +26,15 @@
 		069E52C228C3D97200C1F3E4 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52C128C3D97200C1F3E4 /* SplashInteractor.swift */; };
 		069E52C428C3D98900C1F3E4 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52C328C3D98900C1F3E4 /* SplashPresenter.swift */; };
 		069E52C628C3D9B600C1F3E4 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52C528C3D9B600C1F3E4 /* SplashRouter.swift */; };
+		069E52D028C3DBAD00C1F3E4 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52CF28C3DBAD00C1F3E4 /* ListRouter.swift */; };
+		069E52D228C3DBCA00C1F3E4 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52D128C3DBCA00C1F3E4 /* ListPresenter.swift */; };
+		069E52D428C3DC2000C1F3E4 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52D328C3DC2000C1F3E4 /* ListInteractor.swift */; };
+		069E52D628C3DC6000C1F3E4 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52D528C3DC6000C1F3E4 /* ListResponse.swift */; };
+		069E52D928C3DC8D00C1F3E4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52D728C3DC8D00C1F3E4 /* ListViewController.swift */; };
+		069E52DA28C3DC8D00C1F3E4 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069E52D828C3DC8D00C1F3E4 /* ListViewController.xib */; };
+		069E52DD28C3DF7B00C1F3E4 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52DB28C3DF7B00C1F3E4 /* MovieListCell.swift */; };
+		069E52DE28C3DF7B00C1F3E4 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069E52DC28C3DF7B00C1F3E4 /* MovieListCell.xib */; };
+		069E52E028C3DFB300C1F3E4 /* MovieListCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E52DF28C3DFB300C1F3E4 /* MovieListCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,15 @@
 		069E52C128C3D97200C1F3E4 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		069E52C328C3D98900C1F3E4 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		069E52C528C3D9B600C1F3E4 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		069E52CF28C3DBAD00C1F3E4 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		069E52D128C3DBCA00C1F3E4 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		069E52D328C3DC2000C1F3E4 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		069E52D528C3DC6000C1F3E4 /* ListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
+		069E52D728C3DC8D00C1F3E4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		069E52D828C3DC8D00C1F3E4 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		069E52DB28C3DF7B00C1F3E4 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		069E52DC28C3DF7B00C1F3E4 /* MovieListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
+		069E52DF28C3DFB300C1F3E4 /* MovieListCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCellPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +177,7 @@
 		069E52B628C3D8A900C1F3E4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				069E52C728C3DB3800C1F3E4 /* List */,
 				069E52B728C3D8B400C1F3E4 /* Splash */,
 			);
 			path = Modules;
@@ -214,6 +233,70 @@
 				069E52BE28C3D8ED00C1F3E4 /* SplashViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		069E52C728C3DB3800C1F3E4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				069E52CD28C3DB7600C1F3E4 /* View */,
+				069E52CC28C3DB7100C1F3E4 /* Interactor */,
+				069E52CB28C3DB5B00C1F3E4 /* Presenter */,
+				069E52C928C3DB4D00C1F3E4 /* Entity */,
+				069E52C828C3DB4800C1F3E4 /* Router */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		069E52C828C3DB4800C1F3E4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				069E52CF28C3DBAD00C1F3E4 /* ListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		069E52C928C3DB4D00C1F3E4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				069E52D528C3DC6000C1F3E4 /* ListResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		069E52CB28C3DB5B00C1F3E4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				069E52D128C3DBCA00C1F3E4 /* ListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		069E52CC28C3DB7100C1F3E4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				069E52D328C3DC2000C1F3E4 /* ListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		069E52CD28C3DB7600C1F3E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				069E52CE28C3DB7B00C1F3E4 /* Cell */,
+				069E52D728C3DC8D00C1F3E4 /* ListViewController.swift */,
+				069E52D828C3DC8D00C1F3E4 /* ListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		069E52CE28C3DB7B00C1F3E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				069E52DB28C3DF7B00C1F3E4 /* MovieListCell.swift */,
+				069E52DC28C3DF7B00C1F3E4 /* MovieListCell.xib */,
+				069E52DF28C3DFB300C1F3E4 /* MovieListCellPresenter.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +367,8 @@
 			files = (
 				069E529028C3D18D00C1F3E4 /* LaunchScreen.storyboard in Resources */,
 				069E52C028C3D8ED00C1F3E4 /* SplashViewController.xib in Resources */,
+				069E52DA28C3DC8D00C1F3E4 /* ListViewController.xib in Resources */,
+				069E52DE28C3DF7B00C1F3E4 /* MovieListCell.xib in Resources */,
 				069E528D28C3D18D00C1F3E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +380,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069E52D628C3DC6000C1F3E4 /* ListResponse.swift in Sources */,
 				069E528428C3D18B00C1F3E4 /* AppDelegate.swift in Sources */,
 				069E52B528C3D70200C1F3E4 /* WorkItem.swift in Sources */,
+				069E52D228C3DBCA00C1F3E4 /* ListPresenter.swift in Sources */,
 				069E528628C3D18B00C1F3E4 /* SceneDelegate.swift in Sources */,
+				069E52D028C3DBAD00C1F3E4 /* ListRouter.swift in Sources */,
 				069E52B328C3D59300C1F3E4 /* Router.swift in Sources */,
 				069E529A28C3D3C800C1F3E4 /* BaseViewController.swift in Sources */,
+				069E52D928C3DC8D00C1F3E4 /* ListViewController.swift in Sources */,
+				069E52E028C3DFB300C1F3E4 /* MovieListCellPresenter.swift in Sources */,
 				069E52A128C3D49700C1F3E4 /* LoadingShowable.swift in Sources */,
+				069E52DD28C3DF7B00C1F3E4 /* MovieListCell.swift in Sources */,
 				069E52A928C3D50200C1F3E4 /* NetworkManager.swift in Sources */,
 				069E52C228C3D97200C1F3E4 /* SplashInteractor.swift in Sources */,
 				069E52B128C3D56500C1F3E4 /* ServiceManager.swift in Sources */,
@@ -308,6 +399,7 @@
 				069E529E28C3D45E00C1F3E4 /* Extensions.swift in Sources */,
 				069E52A428C3D4B500C1F3E4 /* LoadingView.swift in Sources */,
 				069E52BF28C3D8ED00C1F3E4 /* SplashViewController.swift in Sources */,
+				069E52D428C3DC2000C1F3E4 /* ListInteractor.swift in Sources */,
 				069E52C428C3D98900C1F3E4 /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
