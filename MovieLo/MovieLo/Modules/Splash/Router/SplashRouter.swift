@@ -5,7 +5,7 @@
 //  Created by Ozan Barış Günaydın on 3.09.2022.
 //
 
-import Foundation
+import UIKit
 
 protocol SplashRouterProtocol: AnyObject {
     func navigate(_ route: SplashRoutes)
@@ -37,9 +37,9 @@ extension SplashRouter: SplashRouterProtocol {
         switch route {
         case .listScreen:
             guard let window = viewController?.view.window else { return }
-//            let listVC = ListRouter.createModule()
-//            let navigationController = UINavigationController(rootViewController: listVC)
-//            window.rootViewController = navigationController
+            let listVC = ListRouter.createModule()
+            let navigationController = UINavigationController(rootViewController: listVC)
+            window.rootViewController = navigationController
         }
     }
 }

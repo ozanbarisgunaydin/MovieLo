@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="MovieLo" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyView" destination="u3z-Nh-BUd" id="Lcp-2O-XSg"/>
+                <outlet property="searchBar" destination="ajR-46-gHq" id="xZa-4e-rWy"/>
+                <outlet property="tableView" destination="hbv-rX-Uk8" id="ShI-zI-jKu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-rX-Uk8">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="PJ2-x4-BBO"/>
+                        <outlet property="delegate" destination="-1" id="UrD-f5-MMg"/>
+                    </connections>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3z-Nh-BUd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="GgS-X8-v9v">
+                            <rect key="frame" x="16" y="290" width="382" height="238"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no result for the searched movie. Plase make another search." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFS-wh-1l7">
+                                    <rect key="frame" x="6.5" y="0.0" width="369.5" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_result_image" translatesAutoresizingMaskIntoConstraints="NO" id="uIM-Dk-HeV">
+                                    <rect key="frame" x="105.5" y="67" width="171" height="171"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="uIM-Dk-HeV" secondAttribute="height" multiplier="1:1" id="Zc8-Q1-UFD"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="uIM-Dk-HeV" firstAttribute="centerX" secondItem="zFS-wh-1l7" secondAttribute="centerX" id="7Fe-At-3fb"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="GgS-X8-v9v" secondAttribute="trailing" constant="16" id="6Mj-RP-3nZ"/>
+                        <constraint firstItem="GgS-X8-v9v" firstAttribute="centerX" secondItem="u3z-Nh-BUd" secondAttribute="centerX" id="7lf-7c-Ldf"/>
+                        <constraint firstItem="GgS-X8-v9v" firstAttribute="leading" secondItem="u3z-Nh-BUd" secondAttribute="leading" constant="16" id="AQK-UH-1gK"/>
+                        <constraint firstItem="GgS-X8-v9v" firstAttribute="centerY" secondItem="u3z-Nh-BUd" secondAttribute="centerY" id="my6-aw-9Rd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="u3z-Nh-BUd" secondAttribute="bottom" id="0JN-W4-sCQ"/>
+                <constraint firstItem="u3z-Nh-BUd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9jf-Te-vhb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hbv-rX-Uk8" secondAttribute="trailing" id="BdH-Dq-0RB"/>
+                <constraint firstItem="u3z-Nh-BUd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JKp-kJ-nn5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u3z-Nh-BUd" secondAttribute="trailing" id="JSk-51-i70"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hbv-rX-Uk8" secondAttribute="bottom" id="XaL-O3-7u4"/>
+                <constraint firstItem="hbv-rX-Uk8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bcX-tS-9bs"/>
+                <constraint firstItem="hbv-rX-Uk8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eXb-pQ-j71"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="132"/>
+        </view>
+        <searchBar contentMode="redraw" placeholder="Search" id="ajR-46-gHq">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <textInputTraits key="textInputTraits"/>
+            <point key="canvasLocation" x="138" y="-223"/>
+        </searchBar>
+    </objects>
+    <resources>
+        <image name="no_result_image" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
