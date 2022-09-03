@@ -50,7 +50,7 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
         }
         
         if let date = movieDetail?.released  {
-            view?.setReleaseDate(date)
+            view?.setReleaseDate("Released at: " + date)
         }
         
         if let voteAverage = movieDetail?.imdbRating {
@@ -69,7 +69,6 @@ final class MovieDetailPresenter: MovieDetailPresenterProtocol {
     
     func goToImdbPage() {
         router.navigate(.openURL(imdbId: self.movieID))
-        
     }
     
     private func fetchMovieDetail(with movieId: String) {
