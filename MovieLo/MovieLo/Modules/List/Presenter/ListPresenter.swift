@@ -54,7 +54,7 @@ final class ListPresenter: ListPresenterProtocol {
     
     func didSelectRowAt(index: Int) {
         guard let movie = movie(index) else { return }
-//        router.navigate(.detail(movieId: movie.imdbID))
+        router.navigate(.detail(movieId: movie.imdbID))
     }
     
     func searchMovie(searchText: String) {

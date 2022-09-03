@@ -12,7 +12,7 @@ protocol ListRouterProtocol: AnyObject {
 }
 
 enum ListRoutes {
-    case detail(movieId: Int?)
+    case detail(movieId: String?)
 }
 
 final class ListRouter {
@@ -38,10 +38,10 @@ extension ListRouter: ListRouterProtocol {
         switch route {
             
         case .detail(let movieId):
-            print("Detail called")
-//            let detailVC = MovieDetailRouter.createModule()
-//            detailVC.movieId = movieId
-//            viewController?.navigationController?.pushViewController(detailVC, animated: true)
+            guard let movieId = movieId else { return }
+            
+            let detailVC = MovieDetailRouter.createModule(movieID: movieId)
+            viewController?.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
 }
