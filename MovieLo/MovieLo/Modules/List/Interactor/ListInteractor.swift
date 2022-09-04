@@ -8,11 +8,11 @@
 import Foundation
 
 protocol ListInteractorProtocol: AnyObject {
-    func fetchNowPlayingMovies(searchText: String)
+    func fetchMoviesWith(searchText: String)
 }
 
 protocol ListInteractorOutputProtocol: AnyObject {
-    func fetchNowPlayingMovies(result: MovieListResult)
+    func recievedMovies(result: MovieListResult)
 }
 
 typealias MovieListResult = Result<ListResponse, Error>
@@ -24,10 +24,10 @@ final class ListInteractor {
 
 extension ListInteractor: ListInteractorProtocol {
     
-    func fetchNowPlayingMovies(searchText: String) {
+    func fetchMoviesWith(searchText: String) {
         movieService.fetchSearch(query: searchText, completionHandler: { [weak self] result in
             guard let self = self else { return }
-            self.output?.fetchNowPlayingMovies(result: result)
+            self.output?.recievedMovies(result: result)
         })
     }
     

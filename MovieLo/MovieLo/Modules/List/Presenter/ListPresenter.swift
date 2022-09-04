@@ -23,7 +23,6 @@ final class ListPresenter: ListPresenterProtocol {
     let router: ListRouterProtocol!
     let interactor: ListInteractorProtocol!
     
-    private var banners: [ListResult] = []
     private var movies: [ListResult] = []
     
     init(
@@ -60,7 +59,7 @@ final class ListPresenter: ListPresenterProtocol {
     
     func searchMovie(searchText: String) {
         view?.showLoadingView()
-        interactor.fetchNowPlayingMovies(searchText: searchText)
+        interactor.fetchMoviesWith(searchText: searchText)
     }
     
     func clearData() {
@@ -71,7 +70,7 @@ final class ListPresenter: ListPresenterProtocol {
 
 extension ListPresenter: ListInteractorOutputProtocol {
     
-    func fetchNowPlayingMovies(result: MovieListResult) {
+    func recievedMovies(result: MovieListResult) {
         view?.hideLoadingView()
         
         switch result {
