@@ -31,18 +31,26 @@ extension SplashInteractor: SplashInteractorProtocol {
     }
     
     func getRemoteConfing() {
-        // TODO: There is a bug for lodoos text on the first run on simulator
-        remoteConfig.fetchAndActivate(completionHandler: { [weak self] (status, error) in
-            guard let self = self else { return }
-            remoteConfig.fetch(withExpirationDuration: 5) { (status, error) in
-                self.setNewValuesFromRemoteConfig()
+        remoteConfig.fetch { (status, error) -> Void in
+          if status == .success {
+            print("\n✅ Config fetched.. \n")
+            remoteConfig.activate { changed, error in
+                if error != nil {
+                    print("\n🚨Error: \(error?.localizedDescription ?? "No error available.") \n")
+                } else {
+                    print("\n✅ Config activated.. \n")
+                }
             }
-            
-        })
+          } else {
+            print("\n🚨 Config not fetched..\n")
+            print("\n🚨 Error: \(error?.localizedDescription ?? "No error available.")\n")
+          }
+          self.setNewValuesFromRemoteConfig()
+        }
     }
     
     func setNewValuesFromRemoteConfig() {
-        let newLabelText = remoteConfig.configValue(forKey: "RemoteConfigDefaults").stringValue ?? ""
+        let newLabelText = remoteConfig.configValue(forKey: "splashText").stringValue ?? ""
         output?.setRemoteConfig(text: newLabelText)
     }
 

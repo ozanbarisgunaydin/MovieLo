@@ -16,6 +16,8 @@ protocol SplashPresenterProtocol: AnyObject {
 
 final class SplashPresenter: SplashPresenterProtocol {
     
+    lazy var workItem = WorkItem()
+
     unowned var view: SplashViewControllerProtocol!
     let router: SplashRouterProtocol!
     let interactor: SplashInteractorProtocol!
@@ -27,6 +29,7 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     func viewDidLoad() {
+        setupRemoteConfigDefaults()
         interactor.checkInternetConnection()
     }
     
@@ -35,7 +38,11 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     private func setupRemoteConfigDefaults() {
-        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
+        remoteConfig.setDefaults(fromPlist: "splashText")
+        
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
     }
 }
 
@@ -44,7 +51,6 @@ extension SplashPresenter: SplashInteractorOutputProtocol {
     
     func internetConnection(status: Bool) {
         if status {
-            setupRemoteConfigDefaults()
             interactor.getRemoteConfing()
         } else {
             view.noInternetConnection()
@@ -52,6 +58,12 @@ extension SplashPresenter: SplashInteractorOutputProtocol {
     }
     
     func setRemoteConfig(text: String) {
-        view.setRemoteConfig(text: text)
+        if text == "" {
+            workItem.perform(after: 0.5) { /// The bug of remote config at first run on a device for dublicate fetching managed with workItem. If there is a dublicate call workItem take the last one.
+                self.interactor.getRemoteConfing()
+            }
+        } else {
+            view.setRemoteConfig(text: text)
+        }
     }
 }
