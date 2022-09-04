@@ -217,7 +217,6 @@
 				069E52BC28C3D8DC00C1F3E4 /* View */,
 				069E52BB28C3D8D700C1F3E4 /* Interactor */,
 				069E52BA28C3D8D200C1F3E4 /* Presenter */,
-				069E52B928C3D8CC00C1F3E4 /* Entity */,
 				069E52B828C3D8C500C1F3E4 /* Router */,
 			);
 			path = Splash;
@@ -229,13 +228,6 @@
 				069E52C528C3D9B600C1F3E4 /* SplashRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		069E52B928C3D8CC00C1F3E4 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		069E52BA28C3D8D200C1F3E4 /* Presenter */ = {
@@ -646,6 +638,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OzanBarisGunaydin.MovieLo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -673,6 +666,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OzanBarisGunaydin.MovieLo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
