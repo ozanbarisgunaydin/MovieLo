@@ -76,7 +76,7 @@
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>
-        <searchBar contentMode="redraw" placeholder="Search" id="ajR-46-gHq">
+        <searchBar contentMode="redraw" placeholder="You can search here! " id="ajR-46-gHq">
             <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <textInputTraits key="textInputTraits"/>
