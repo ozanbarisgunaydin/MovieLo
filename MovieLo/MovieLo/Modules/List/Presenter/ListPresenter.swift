@@ -14,6 +14,7 @@ protocol ListPresenterProtocol: AnyObject {
     func movie(_ index: Int) -> ListResult?
     func didSelectRowAt(index: Int)
     func searchMovie(searchText: String)
+    func clearData()
 }
 
 final class ListPresenter: ListPresenterProtocol {
@@ -61,6 +62,11 @@ final class ListPresenter: ListPresenterProtocol {
         view?.showLoadingView()
         interactor.fetchNowPlayingMovies(searchText: searchText)
     }
+    
+    func clearData() {
+        self.movies = []
+    }
+
 }
 
 extension ListPresenter: ListInteractorOutputProtocol {

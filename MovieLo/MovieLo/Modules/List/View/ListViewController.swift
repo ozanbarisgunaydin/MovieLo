@@ -89,6 +89,8 @@ extension ListViewController: UISearchBarDelegate {
         }
         searchBar.text = ""
         searchBar.endEditing(true)
+        presenter.clearData()
+        self.tableView.reloadData()
         self.showNeededScreen(hasData: true)
     }
     
