@@ -56,11 +56,12 @@ class MovieDetailViewController: BaseViewController {
 extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingShowable {
     
     func setMoviePoster(_ imageUrl: URL) {
-        moviePosterImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder_movie_poster"))
+        moviePosterImage.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "placeholder_image"))
     }
     
     func setMovieTitle(_ text: String) {
         self.title = text
+        sendAnalyticEvent(text: text)
     }
     
     func setMovieDescription(_ text: String) {
@@ -89,6 +90,10 @@ extension MovieDetailViewController: MovieDetailViewControllerProtocol, LoadingS
     
     func hideLoadingView() {
         hideLoading()
+    }
+    
+    private func sendAnalyticEvent(text: String) {
+        AnalyticsHelper.sendFirebaseEvent(key: "Detail", parameters: ["movieTitle" : text])
     }
     
 }
