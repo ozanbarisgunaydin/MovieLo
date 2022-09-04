@@ -22,6 +22,13 @@ protocol MovieDetailViewControllerProtocol: AnyObject {
 
 class MovieDetailViewController: BaseViewController {
     
+    @IBOutlet private weak var posterFrameView: UIView! {
+        didSet {
+            posterFrameView.layer.borderWidth = 2
+            posterFrameView.layer.borderColor = UIColor.gray.cgColor
+            posterFrameView.layer.cornerRadius = 8
+        }
+    }
     @IBOutlet private weak var moviePosterImage: UIImageView! {
         didSet {
             moviePosterImage.layer.cornerRadius = 8
