@@ -13,6 +13,10 @@ protocol LoadingShowable where Self: UIViewController {
 }
 
 extension LoadingShowable {
+    
+    /// Starts the loading animation.
+    ///  The color of the strokes and border can be changed with shared properties.
+    ///  Also the size of the spinner view can be changed also.
     func showLoading() {
         LoadingView.shared.startLoading()
     }

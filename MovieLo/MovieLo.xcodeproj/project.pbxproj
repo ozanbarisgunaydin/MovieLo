@@ -46,6 +46,7 @@
 		069E530928C4313300C1F3E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530828C4313300C1F3E4 /* FirebaseAnalytics */; };
 		069E530B28C4313300C1F3E4 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530A28C4313300C1F3E4 /* FirebaseRemoteConfig */; };
 		069E530E28C4333200C1F3E4 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530D28C4333200C1F3E4 /* FirebaseMessaging */; };
+		06C2F3DE28C4CFDA00956A65 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2F3DD28C4CFDA00956A65 /* SpinnerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		069E52F628C4110400C1F3E4 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		069E52F928C4216000C1F3E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		069E530528C4301400C1F3E4 /* AnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsHelper.swift; sourceTree = "<group>"; };
+		06C2F3DD28C4CFDA00956A65 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				069E52A328C3D4B500C1F3E4 /* LoadingView.swift */,
+				06C2F3DD28C4CFDA00956A65 /* SpinnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				069E52D628C3DC6000C1F3E4 /* ListResponse.swift in Sources */,
 				069E52F728C4110400C1F3E4 /* MovieDetailViewController.swift in Sources */,
 				069E528428C3D18B00C1F3E4 /* AppDelegate.swift in Sources */,
+				06C2F3DE28C4CFDA00956A65 /* SpinnerView.swift in Sources */,
 				069E52E828C3FA8800C1F3E4 /* MovieDetailResponse.swift in Sources */,
 				069E52B528C3D70200C1F3E4 /* WorkItem.swift in Sources */,
 				069E52D228C3DBCA00C1F3E4 /* ListPresenter.swift in Sources */,
