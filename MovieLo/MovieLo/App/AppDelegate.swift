@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseRemoteConfig
+import FirebaseMessaging
 
 var remoteConfig = RemoteConfig.remoteConfig()
 
@@ -20,7 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         FirebaseConfiguration.shared.setLoggerLevel(.min) /// Added for the min logging on console.
-
+        
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { succes, error in
+            if error != nil {
+                
+            }
+        }
+        
         let vc = SplashRouter.createModule()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = vc
@@ -45,3 +54,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("❗️ Failed to register for push", error)
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}

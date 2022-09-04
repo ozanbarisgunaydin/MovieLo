@@ -39,7 +39,9 @@ extension SplashRouter: SplashRouterProtocol {
             guard let window = viewController?.view.window else { return }
             let listVC = ListRouter.createModule()
             let navigationController = UINavigationController(rootViewController: listVC)
-            window.rootViewController = navigationController
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                window.rootViewController = navigationController
+            }
         }
     }
 }

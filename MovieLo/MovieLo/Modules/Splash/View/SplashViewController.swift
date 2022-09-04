@@ -15,11 +15,7 @@ protocol SplashViewControllerProtocol: AnyObject {
 class SplashViewController: BaseViewController {
 
     @IBOutlet private weak var splashImage: UIImageView!
-    @IBOutlet private weak var remoteConfigLabel: UILabel! {
-        didSet {
-            remoteConfigLabel.text = ""
-        }
-    }
+    @IBOutlet private weak var remoteConfigLabel: UILabel!
     
     var presenter: SplashPresenterProtocol!
 
@@ -38,9 +34,7 @@ extension SplashViewController: SplashViewControllerProtocol {
     
     func setRemoteConfig(text: String) {
         remoteConfigLabel.text = text
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.presenter.routeToList()
-        }
+        self.presenter.routeToList()
     }
 
 }

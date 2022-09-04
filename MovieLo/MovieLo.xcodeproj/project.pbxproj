@@ -45,6 +45,7 @@
 		069E530628C4301400C1F3E4 /* AnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E530528C4301400C1F3E4 /* AnalyticsHelper.swift */; };
 		069E530928C4313300C1F3E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530828C4313300C1F3E4 /* FirebaseAnalytics */; };
 		069E530B28C4313300C1F3E4 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530A28C4313300C1F3E4 /* FirebaseRemoteConfig */; };
+		069E530E28C4333200C1F3E4 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 069E530D28C4333200C1F3E4 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 			files = (
 				069E52AF28C3D54D00C1F3E4 /* SDWebImage in Frameworks */,
 				069E52AC28C3D53100C1F3E4 /* Alamofire in Frameworks */,
+				069E530E28C4333200C1F3E4 /* FirebaseMessaging in Frameworks */,
 				069E530928C4313300C1F3E4 /* FirebaseAnalytics in Frameworks */,
 				069E530B28C4313300C1F3E4 /* FirebaseRemoteConfig in Frameworks */,
 			);
@@ -396,6 +398,7 @@
 				069E52AE28C3D54D00C1F3E4 /* SDWebImage */,
 				069E530828C4313300C1F3E4 /* FirebaseAnalytics */,
 				069E530A28C4313300C1F3E4 /* FirebaseRemoteConfig */,
+				069E530D28C4333200C1F3E4 /* FirebaseMessaging */,
 			);
 			productName = MovieLo;
 			productReference = 069E528028C3D18B00C1F3E4 /* MovieLo.app */;
@@ -429,6 +432,7 @@
 				069E52AA28C3D53100C1F3E4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				069E52AD28C3D54D00C1F3E4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				069E530728C4313300C1F3E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				069E530C28C4333200C1F3E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 069E528128C3D18B00C1F3E4 /* Products */;
 			projectDirPath = "";
@@ -721,6 +725,14 @@
 				kind = branch;
 			};
 		};
+		069E530C28C4333200C1F3E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -743,6 +755,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 069E530728C4313300C1F3E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		069E530D28C4333200C1F3E4 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 069E530728C4313300C1F3E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
