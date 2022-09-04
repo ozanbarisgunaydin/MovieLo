@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import FirebaseRemoteConfig
 
 protocol SplashPresenterProtocol: AnyObject {
     func viewDidLoad()
     func routeToList()
 }
+
 
 final class SplashPresenter: SplashPresenterProtocol {
     
@@ -32,6 +34,10 @@ final class SplashPresenter: SplashPresenterProtocol {
         router.navigate(.listScreen)
     }
     
+    private func setupRemoteConfigDefaults() {
+        let defaultValue = ["RemoteConfigDefaults": "Hello world!" as NSObject]
+        remoteConfig.setDefaults(defaultValue)
+    }
 }
 
 
@@ -39,11 +45,14 @@ extension SplashPresenter: SplashInteractorOutputProtocol {
     
     func internetConnection(status: Bool) {
         if status {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.routeToList()
-            }
+            setupRemoteConfigDefaults()
+            interactor.getRemoteConfing()
         } else {
             view.noInternetConnection()
         }
+    }
+    
+    func setRemoteConfig(text: String) {
+        view.setRemoteConfig(text: text)
     }
 }

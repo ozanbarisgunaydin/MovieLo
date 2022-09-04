@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="MovieLo" customModuleProvider="target">
             <connections>
+                <outlet property="remoteConfigLabel" destination="GpE-qM-oue" id="F63-Cu-NPk"/>
                 <outlet property="splashImage" destination="1bt-XH-tMs" id="bHV-BC-tJj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,12 +27,22 @@
                         <constraint firstAttribute="width" constant="240" id="iAP-et-bBj"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote Config" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpE-qM-oue">
+                    <rect key="frame" x="20" y="634" width="374" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="GpE-qM-oue" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4DY-Lr-Di3"/>
+                <constraint firstItem="GpE-qM-oue" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4aO-Pi-UiQ"/>
                 <constraint firstItem="1bt-XH-tMs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NRS-NR-cJg"/>
                 <constraint firstItem="1bt-XH-tMs" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="RmU-NG-gj2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GpE-qM-oue" secondAttribute="trailing" constant="20" id="aat-7U-yvn"/>
+                <constraint firstItem="GpE-qM-oue" firstAttribute="top" secondItem="1bt-XH-tMs" secondAttribute="bottom" constant="61" id="rHj-9b-9Hh"/>
             </constraints>
             <point key="canvasLocation" x="132" y="132"/>
         </view>
