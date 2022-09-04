@@ -28,19 +28,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { succes, error in
             if error != nil {
-                
+                /* no - op */
             }
         }
         
+        // MARK: - VIPER initiliasation
         let vc = SplashRouter.createModule()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
+        
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
+    // MARK: - UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
