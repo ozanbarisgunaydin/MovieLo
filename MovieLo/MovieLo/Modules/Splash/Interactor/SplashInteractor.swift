@@ -31,11 +31,14 @@ extension SplashInteractor: SplashInteractorProtocol {
     }
     
     func getRemoteConfing() {
-        remoteConfig.fetch(withExpirationDuration: 0) { [unowned self] (status, error) in
-            guard error == nil else { return }
-            remoteConfig.activate()
-            self.setNewValuesFromRemoteConfig()
-        }
+        // TODO: There is a bug for lodoos text on the first run on simulator
+        remoteConfig.fetchAndActivate(completionHandler: { [weak self] (status, error) in
+            guard let self = self else { return }
+            remoteConfig.fetch(withExpirationDuration: 5) { (status, error) in
+                self.setNewValuesFromRemoteConfig()
+            }
+            
+        })
     }
     
     func setNewValuesFromRemoteConfig() {

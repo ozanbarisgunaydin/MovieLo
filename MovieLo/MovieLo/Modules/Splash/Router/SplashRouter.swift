@@ -39,7 +39,7 @@ extension SplashRouter: SplashRouterProtocol {
             guard let window = viewController?.view.window else { return }
             let listVC = ListRouter.createModule()
             let navigationController = UINavigationController(rootViewController: listVC)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { /// Adds the delay accoring to the desired. The timer method also can be used for this purpose.
                 window.rootViewController = navigationController
             }
         }

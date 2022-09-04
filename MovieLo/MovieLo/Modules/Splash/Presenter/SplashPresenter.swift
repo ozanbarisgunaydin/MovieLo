@@ -35,8 +35,7 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     private func setupRemoteConfigDefaults() {
-        let defaultValue = ["RemoteConfigDefaults": "Hello world!" as NSObject]
-        remoteConfig.setDefaults(defaultValue)
+        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
     }
 }
 

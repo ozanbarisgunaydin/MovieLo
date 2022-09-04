@@ -19,9 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //MARK: - Firebase remoteConfig settings
         FirebaseApp.configure()
         FirebaseConfiguration.shared.setLoggerLevel(.min) /// Added for the min logging on console.
-        
+
+        //MARK: - Firebase push notification settings
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { succes, error in
@@ -54,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/// Since the certifcation needings the settings added for the push notifications with Firebase.
+/// Additionaly, FirebaseAppDelegateProxyEnabled boolean parameter added into info.plist with the NO (False / 0) parameter.
+
+//MARK: -Firebase push notification settings
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
