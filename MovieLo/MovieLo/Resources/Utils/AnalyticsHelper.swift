@@ -11,7 +11,7 @@ import FirebaseAnalytics
 struct AnalyticsHelper {
     
     static func sendFirebaseEvent(key: String, parameters: [String: Any]? = nil) {
-        print("🔔 sendFirebaseEvent: \(key)")
+        print("🔔 sendFirebaseEvent: \(key) ", parameters ?? "" )
         Analytics.logEvent(key, parameters: parameters)
     }
 }
