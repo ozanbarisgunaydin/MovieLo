@@ -2,9 +2,9 @@
 
 Fundamentally, MovieLo app is a movie searching app which includes the detail and imdb pages of movie or serie. The app uses the Omdb API for data providing.
 
-App writed by the VIPER pattern for the advenced maintability and depency inversion principle. The networking layer prepared cleanly with Alamofire. BaseViewController structer embeded for the clean building of scenes.
+App writed by the VIPER pattern for the advenced maintainability and depency inversion principle. The networking layer prepared cleanly with Alamofire. BaseVC structer embeded for the clean building of scenes.
 
-Image download proccess managed with SDWebImage library. In addition, for the event logging, remote config and push notofication Firebase libraries used. All of the libraries added with Swift Package Manager (SPM).
+Image download proccess managed with SDWebImage library. In addition, for the event logging, remote config and push notofication actions Firebase libraries used. All of the libraries added with Swift Package Manager (SPM).
 
 App has 3 scenes: Splash, List and Detail.
 
